@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Age & Gender Detector</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">COMPUTER VISION DEMO</p><h1>Age & Gender Detector</h1><p>Estimates apparent age range and perceived gender presentation from a live camera feed or image.</p></header>
+    <section class="notice">Predictions are visual estimates, not facts about identity. Do not use for decisions about people.</section>
+    <section class="workspace">
+      <div class="viewer"><video id="video" autoplay muted playsinline></video><canvas id="canvas"></canvas><img id="preview" alt="Uploaded image preview" hidden></div>
+      <div class="controls">
+        <button id="cameraButton">Start camera</button>
+        <label class="file-label">Choose image<input id="imageInput" type="file" accept="image/*"></label>
+        <button id="analyzeButton" disabled>Analyze frame</button>
+        <button id="downloadButton" disabled>Download annotated image</button>
+        <p id="status" role="status">Start the camera or select an image.</p>
+      </div>
+    </section>
+    <section><h2>Results</h2><div id="results" class="results"><p>No analysis yet.</p></div></section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
